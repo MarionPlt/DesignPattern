@@ -9,7 +9,7 @@
 ### Diagrammes factory   
 ![](abstractFactory1.png)
 
-![](abstractFactory2.png)
+![](abstractFactory2.png)  
 Description partie scooter : une classe abstraite Scooter, deux classes ScooterElectrique et ScooterEssence qui contiennent les parametres propres à chaque scooter. Pour créer un scooter on passe par ces deux classes filles.
 
 Exemple implémentation :  
@@ -297,3 +297,4 @@ A partir du client, on va savoir a quel type de commande on a affaire en ne pass
 
 
 # 4) singleton 
+(en cours)
