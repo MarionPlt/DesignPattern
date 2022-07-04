@@ -1,4 +1,4 @@
-﻿# 1) abstract factory design pattern
+﻿# 1) abstract factory 
  **Problématique** 
  A chaque fois qu'une nouvelle classe véhicule doit etre prise en compte, on doit modifier la classe mère.
 
@@ -82,7 +82,7 @@ public class Catalogue {
 }
 ````
 
-# 2) builder design pattern
+# 2) builder 
 **Problématique**  
 Créer un systeme capable de construire une liasse de documents.
 
@@ -278,3 +278,22 @@ public class ClientVehicule
 ```
 
 NB:  on a simplifié le code en travaillant avec des strings et des concaténations.
+
+
+# 3) factory method 
+
+Définit une interface pour la création d'un objet, mais en laissant à des sous-classes le choix des classes à instancier. 
+La Fabrique simple permet à une classe de déléguer l'instanciation à des sous-classes.
+
+### Diagrammes factory method
+
+![](factoryMethod.png)  
+La classe Client, qui est abstraite, introduit signature de la methode créeCommande().
+On a ensuite des builders concrets (ClientCrédit/ClientComptant). On utilise la classe Commande, qui est une classe abstraite.
+Elle décrit les propriétés communes des produits.
+A partir du client, on va savoir a quel type de commande on a affaire en ne passant que par les classes abstraites.
+
+![](factoryMethod2.png) 
+
+
+# 4) singleton 
