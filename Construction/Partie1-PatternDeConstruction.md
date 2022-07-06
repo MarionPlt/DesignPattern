@@ -1,18 +1,23 @@
-﻿# 1) abstract factory 
- **Problématique** 
- A chaque fois qu'une nouvelle classe véhicule doit etre prise en compte, on doit modifier la classe mère.
+﻿# 1) abstract factory
 
- L'abstract factory résoud les problemes de creation de classe dont on ne connait pas le contenu final afin de déresponsabiliser la classe mère.
- Ici utilisation d'une interface qui comprend la signature des méthodes qui permettront de construire chaque produit et de sous-classes fabriqueVehiculeElectrique et fabriqueVehiculeEssence
+**Problématique**
+A chaque fois qu'une nouvelle classe véhicule doit etre prise en compte, on doit modifier la classe mère.
+
+L'abstract factory résoud les problemes de creation de classe dont on ne connait pas le contenu final afin de
+déresponsabiliser la classe mère. Ici utilisation d'une interface qui comprend la signature des méthodes qui permettront
+de construire chaque produit et de sous-classes fabriqueVehiculeElectrique et fabriqueVehiculeEssence  
 *def signature = son nom, ses entrées et ses sorties*
 
-### Diagrammes factory   
+### Diagrammes factory
+
 ![](abstractFactory1.png)
 
 ![](abstractFactory2.png)  
-Description partie scooter : une classe abstraite Scooter, deux classes ScooterElectrique et ScooterEssence qui contiennent les parametres propres à chaque scooter. Pour créer un scooter on passe par ces deux classes filles.
+Description partie scooter : une classe abstraite Scooter, deux classes ScooterElectrique et ScooterEssence qui
+contiennent les parametres propres à chaque scooter. Pour créer un scooter on passe par ces deux classes filles.
 
-Exemple implémentation :  
+Exemple implémentation :
+
 ```
 public abstract class Car {
     protected string model;
@@ -82,18 +87,19 @@ public class Catalogue {
 }
 ````
 
-# 2) builder 
+# 2) builder
+
 **Problématique**  
 Créer un systeme capable de construire une liasse de documents.
 
 But du builder : construire des objets complexes sans en connaitre leur implémentation/ayant plusieurs implémentations.
 
+### Diagrammes builder
 
-### Diagrammes builder   
 ![](builder.png)
 
 ![](builder2.png)  
-NB: le Client ne discute qu'avec le builder de base pour séparer l'implémentation de la routine. 
+NB: le Client ne discute qu'avec le builder de base pour séparer l'implémentation de la routine.
 
 Prenons ici l'exemple de gestion de liasse de documents, sans connaitre a nature du document.
 
@@ -279,22 +285,35 @@ public class ClientVehicule
 
 NB:  on a simplifié le code en travaillant avec des strings et des concaténations.
 
+# 3) factory method
 
-# 3) factory method 
-
-Définit une interface pour la création d'un objet, mais en laissant à des sous-classes le choix des classes à instancier. 
-La Fabrique simple permet à une classe de déléguer l'instanciation à des sous-classes.
+Définit une interface pour la création d'un objet, mais en laissant à des sous-classes le choix des classes à
+instancier. La Fabrique simple permet à une classe de déléguer l'instanciation à des sous-classes.
 
 ### Diagrammes factory method
 
 ![](factoryMethod.png)  
-La classe Client, qui est abstraite, introduit signature de la methode créeCommande().
-On a ensuite des builders concrets (ClientCrédit/ClientComptant). On utilise la classe Commande, qui est une classe abstraite.
-Elle décrit les propriétés communes des produits.
-A partir du client, on va savoir a quel type de commande on a affaire en ne passant que par les classes abstraites.
+La classe Client, qui est abstraite, introduit signature de la methode créeCommande(). On a ensuite des builders
+concrets (ClientCrédit/ClientComptant). On utilise la classe Commande, qui est une classe abstraite. Elle décrit les
+propriétés communes des produits. A partir du client, on va savoir a quel type de commande on a affaire en ne passant
+que par les classes abstraites.
 
-![](factoryMethod2.png) 
+![](factoryMethod2.png)
 
+# 4) singleton
 
-# 4) singleton 
-(en cours)
+Le singleton garantit que l'instance d'une classe n'existe qu'en un seul exemplaire.  
+L'abstract factory est susceptible d'utiliser des singletons.  
+Pour reprendre l'exemple de tri de liasse cité précédemment, l'application utulisera ici la classe LiasseVierge qui aura
+une seule instance.  
+Chaque classe qui utilise la LiasseVierge doit avoir accès à la même instance, on ne doit pas pouvoir en créer de
+nouvelle !
+
+![](singleton.png)
+![](singleton2.png)
+
+# 5) prototype
+Le prototype crée de nouveau objets à partir d'objets existants appelés prototypes.  
+Ces prototypes possèdent une méthode clone() qui retourne un objet identique.
+![](prototype.png)  
+*voir exemple d'implémentation dans le dossier Prototype!*
