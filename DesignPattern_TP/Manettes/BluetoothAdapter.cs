@@ -2,8 +2,11 @@
 
 namespace DesignPattern_TP.Manettes
 {
-    public class BluetoothAdapter 
+    public class BluetoothAdapter : ManetteFilaire
     {
+        public BluetoothAdapter(string couleurPrincipale) : base(couleurPrincipale)
+        {
+        }
 
         public bool connecterManette()
         {

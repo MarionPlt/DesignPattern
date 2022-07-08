@@ -22,7 +22,7 @@ namespace DesignPattern_TP.Consoles
         {
             if (isBluetooth)
             {
-                BluetoothAdapter adapter = new BluetoothAdapter();
+                BluetoothAdapter adapter = new BluetoothAdapter(couleur);
                 adapter.connecterManette();
                 return new ManetteBluetooth(couleur);
             }
