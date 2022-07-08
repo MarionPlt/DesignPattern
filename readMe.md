@@ -13,7 +13,7 @@ Le cours est découpé en trois grandes parties :
  **But**  
  Implémenter une/plusieurs solutions avec au moins 3 Design Pattern. 
 
- **Réalisé**  
+ ### 1) DesignPattern_TP  
  Une boutique de consoles de jeux permet de préparer les cadeaux pour les fêtes.
 Pour que le client n'ait qu'un cadeau final devant ses yeux, un *builder* BuilderCadeauDeNoel se charger de préparer la commande.
 Pour ce faire, le client doit répondre au clavier à deux questions :   
@@ -28,3 +28,10 @@ La technologie actuelle nous permet de jouer aux anciennes consoles avec des man
 Lancer le programme avec la classe Program.cs
 
 
+### 2) DesignPattern_TP2
+Un enfant demanande de l'aide. Si la personne à qui iel s'adresse ne peut pas l'aider, la responsabilité est transférée au niveau de responsabilité supérieur grâce à un pattern *chain of responsability* .
+On a une classe Enfant, et une classe abstraite Aide dont découle 3 classes de responsabilité Ami, GrandeSoeur et Parent. 
+Selon le niveau d'aide demandé, la demande sera passée de classe en classe jusqu'à trouver le bon interlocuteur qui sera capable de traiter sa requete. 
+
+**TO DO** 
+Lancer le programme avec la classe Program.cs
