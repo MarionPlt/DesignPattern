@@ -24,7 +24,7 @@ L'*abstract factory* permet de choisir le bon type de console.
 *2)le choix du type de manette*  
 La technologie actuelle nous permet de jouer aux anciennes consoles avec des manettes plus récentes grâce à une classe *Adapter* BluetoothAdapter.
 
-**TO DO ** 
+**TO DO** 
 Lancer le programme avec la classe Program.cs
 
 
