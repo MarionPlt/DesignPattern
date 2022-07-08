@@ -1,3 +1,4 @@
 /.idea
-/.vs
+/DesignPattern_TP/.vs
+/DesignPattern_TP2/.vs
 *.lock
